@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f9f7e8"
+    android:weightSum="1"
+    android:orientation="vertical"
+    tools:context=".Conmigo_exe">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="0.05"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="CONMIGO"
+            android:textSize="30sp"
+            android:textColor="#62bfad"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/act_map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/home_map"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/main_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/my_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="我的行程"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:background="#84b6db"
+            android:layout_margin="20dp"/>
+        <Button
+            android:id="@+id/now"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="當前行程"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:background="#62bfad"
+            android:layout_weight="1"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fix_button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/calendar"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/rcmd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/like"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/home_page"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/home"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/exam"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:src="@drawable/search_2" />
+
+        <ImageButton
+            android:id="@+id/user_page"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/user"
+            android:background="@color/white"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>
