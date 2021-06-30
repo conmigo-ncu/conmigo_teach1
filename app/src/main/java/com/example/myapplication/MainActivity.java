@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -16,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
     private my_schedule schedule_page;
     private add_schedule add_sch;
     private personal_info user;
+    private Question_1 q1;
+
+    private Q1Fragment q1Fragment;
+    private Q2Fragment q2Fragment;;
+    private TestResultFragment testResultFragment;
+
     //spinner物件
     private  Spinner spn;
     @Override
@@ -27,15 +35,28 @@ public class MainActivity extends AppCompatActivity {
         schedule_page = new my_schedule();
         add_sch = new add_schedule();
         user = new personal_info();
+//        q1 = new Question_1();
+        //personal info Test
+        q1Fragment = new Q1Fragment();
+        q2Fragment = new Q2Fragment();
+        testResultFragment = new TestResultFragment();
+        //FragmentManager fragmentManager = getFragmentManager();
+
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.frame, home, "Home")
                 .add(R.id.frame, schedule_page, "My Schedule")
                 .add(R.id.frame, add_sch, "Add Schedule")
                 .add(R.id.frame, user, "Personal Page")
+                .add(R.id.frame, q1Fragment, "Question 1")
+                .add(R.id.frame, q2Fragment, "Question 2")
+                .add(R.id.frame, testResultFragment, "TestResult")
                 .hide(schedule_page)
                 .hide(add_sch)
                 .hide(user)
+                .hide(q1Fragment)
+                .hide(q2Fragment)
+                .hide(testResultFragment)
                 .commit();
 
 
@@ -77,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 .show(user)
                 .commit();
     }
+
     public void hideMySchedule(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
@@ -95,4 +117,33 @@ public class MainActivity extends AppCompatActivity {
                 .hide(user)
                 .commit();
     }
+
+
+
+    public void goQuestion1(){
+        getSupportFragmentManager().beginTransaction()
+                .show(q1Fragment)
+                .commit();
+    }
+
+    public void hideQuestion_1(){
+        getSupportFragmentManager().beginTransaction()
+                //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
+                .hide(q1Fragment)
+                .commit();
+    }
+
+    public void goQuestion2(){
+        getSupportFragmentManager().beginTransaction()
+                .show(q2Fragment)
+                .commit();
+    }
+
+    public void hideQuestion2(){
+        getSupportFragmentManager().beginTransaction()
+                .hide(q2Fragment)
+                .commit();
+    }
+
+    
 }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Q2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/theme_white"
+    tools:context=".Q2Fragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="@string/favor_test_Q2"
+            android:textColor="@color/text_black"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/drive"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/favorbutton_selector"
+            android:text="@string/q2_drive"
+            android:textColor="@color/theme_green"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/pb_transport"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/favorbutton_selector"
+            android:text="@string/q2_pb"
+            android:textColor="@color/theme_green"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/drive"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/drive"
+            app:layout_constraintTop_toBottomOf="@+id/drive" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/sendbutton_selector"
+            android:text="@string/send_button"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/pb_transport"
+            app:layout_constraintStart_toStartOf="@+id/pb_transport"
+            app:layout_constraintTop_toBottomOf="@+id/pb_transport" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

@@ -1,5 +1,28 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Comingo</string>
+
+    <!--Function bars-->
+    <string name="my_trip">我的行程</string>
+    <string name="recomand">推薦</string>
+    <string name="home">首頁</string>
+    <string name="map">地圖搜尋</string>
+    <string name="my_info">我的資訊</string>
+
+    <!-- 喜好測試參數 -->
+    <string name="test_title">喜好問答</string>
+    <string name="favor_test_Q1">"Q: 較偏好的景點類型?\n(至多三項)"</string>
+    <string name="favor_test_Q2">"Q: 較偏好的交通方式?"</string>
+    <string name="q2_drive">自行開車</string>
+    <string name="q2_pb">大眾運輸</string>
+    <!-- 結果-->
+    <string name="q1_result_title">偏好的景點類型</string>
+    <string name="q2_result_title">偏好的交通方式</string>
+    <!--Button-->
+    <string name="send_button">送出</string>
+    <string name="next_button">下一步</string>
+    <string name="retest_button">重新測驗</string>
+    <string name="confirm_button">確認</string>
+
     <string-array name="sort_way">
         <item>依創建時間排序</item>
         <item>依地區排序</item>
@@ -7,4 +30,13 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
