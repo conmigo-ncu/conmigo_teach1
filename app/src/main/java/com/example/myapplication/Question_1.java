@@ -47,7 +47,7 @@ public class Question_1 extends Fragment {
         @Override
         public void onClick(View v) {
             MainActivity activity = (MainActivity) getActivity();
-            activity.hideQuestion_1();
+            activity.hideQuestion1();
         }
     };
 

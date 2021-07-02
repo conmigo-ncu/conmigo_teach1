@@ -5,13 +5,32 @@
     android:id="@+id/Q1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/theme_white"
+    android:orientation="vertical"
     tools:context=".Q1Fragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/TravelTest_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/test_title"
+                android:textSize="30sp" />
+        </android.support.v7.widget.Toolbar>
 
         <TextView
             android:id="@+id/textView"

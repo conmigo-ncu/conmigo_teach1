@@ -1,9 +1,16 @@
 package com.example.myapplication;
 
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.ViewModel;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -59,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 .hide(testResultFragment)
                 .commit();
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigate);
+        bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
 
         //spinner
         /*spn = findViewById(R.id.spinner1);
@@ -74,6 +83,17 @@ public class MainActivity extends AppCompatActivity {
 
         spn.setAdapter(selected);  */
     }
+
+    public void showAddSchedule(){
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                .show(add_sch)
+                .commit();
+    }
+
+    /**************************************************
+     * 下方 menu跳轉 Fragment 方法
+     **************************************************/
     public void showMySchedule(){
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
@@ -86,12 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 .show(schedule_page)
                 .commit();
     }
-    public void showAddSchedule(){
-        getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
-                .show(add_sch)
-                .commit();
-    }
+
     public void showPersonalPage(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
@@ -111,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 .hide(add_sch)
                 .commit();
     }
+
     public void hidePersonalPage(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
@@ -118,15 +134,28 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
+    public void showHomeFragement(){
+        getSupportFragmentManager().beginTransaction()
+                .show(home)
+                .commit();
+    }
 
+    public void hideHomeFragement(){
+        getSupportFragmentManager().beginTransaction()
+                .hide(home)
+                .commit();
+    }
 
+    /*************************************************************
+     * 個人測驗 Fragement
+     *************************************************************/
     public void goQuestion1(){
         getSupportFragmentManager().beginTransaction()
                 .show(q1Fragment)
                 .commit();
     }
 
-    public void hideQuestion_1(){
+    public void hideQuestion1(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
                 .hide(q1Fragment)
@@ -145,5 +174,46 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
-    
+    public void goTestResult(){
+        getSupportFragmentManager().beginTransaction()
+                .show(testResultFragment)
+                .commit();
+    }
+
+    public void hideTestResult(){
+        getSupportFragmentManager().beginTransaction()
+                .hide(testResultFragment)
+                .commit();
+    }
+
+    /*************************************************
+     * 建立下方 menu的listener
+     *************************************************/
+    private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+            hideQuestion1();
+            switch (menuItem.getItemId()){
+
+                case R.id.schedule_menuitem:
+                    showMySchedule();
+                    return true;
+                case R.id.recommand_menuitem:
+                    showHomeFragement();
+                    return true;
+                case R.id.home_menuitem:
+                    showHomeFragement();
+                    return true;
+                case R.id.search_menuitem:
+                    showHomeFragement();
+                    return true;
+                case R.id.user_menuitem:
+                    showPersonalPage();
+                    return true;
+            }
+            return false;
+        }
+    };
 }

@@ -1,10 +1,15 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -30,11 +35,26 @@ public class Q1Fragment extends Fragment {
             R.drawable.kind_4,
             R.drawable.kind_5
     };
+    private Bundle bundle = new Bundle();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View mainView = inflater.inflate(R.layout.fragment_q1, container, false);
+
+        Toolbar toolbar = mainView.findViewById(R.id.TravelTest_toolbar);
+        MainActivity mainActivity = (MainActivity)getActivity();
+        mainActivity.setSupportActionBar(toolbar);
+        mainActivity.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.hideQuestion1();
+                mainActivity.showPersonalPage();
+            }
+        });
+
         nextTestBtn = mainView.findViewById(R.id.Q1_nextTest);
         nextTestBtn.setOnClickListener(goQ2Fragment);
 
@@ -49,8 +69,10 @@ public class Q1Fragment extends Fragment {
     private View.OnClickListener goQ2Fragment = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            FavorMainActivity favorMainActivity = (FavorMainActivity)getActivity();
-            favorMainActivity.showQ2Fragment();
+            MainActivity mainActivity = (MainActivity)getActivity();
+            mainActivity.hideQuestion1();
+            mainActivity.goQuestion2();
         }
     };
+
 }

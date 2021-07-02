@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="224dp"
@@ -41,10 +42,10 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
-            android:text="@string/retest_button"
             android:background="@drawable/test_confirmbutton_selector"
-            android:textSize="20sp"
+            android:text="@string/retest_button"
             android:textColor="@color/text_black"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent" />
@@ -53,10 +54,10 @@
             android:id="@+id/TestResultConfirmBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/confirm_button"
-            app:layout_constraintBottom_toBottomOf="@+id/TestResultReTestBtn"
             android:background="@drawable/sendbutton_selector"
+            android:text="@string/confirm_button"
             android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/TestResultReTestBtn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -67,6 +68,38 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/TravelTest_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/test_title"
+                android:textSize="30sp" />
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/transport_type_result"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/theme_green"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     </android.support.constraint.ConstraintLayout>
 </LinearLayout>

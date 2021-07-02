@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 public class ListAdapter extends RecyclerView.Adapter {
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder( ViewGroup viewGroup, int i) {

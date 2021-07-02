@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class AttractionTypeAdapter extends RecyclerView.Adapter<AttractionTypeAd
 
     private int[] attractionImagesList;
     private String[] attractionTypesList;
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -28,11 +30,12 @@ public class AttractionTypeAdapter extends RecyclerView.Adapter<AttractionTypeAd
             imageView = itemView.findViewById(R.id.attractionTypeBtn_image);
             textView = itemView.findViewById(R.id.attractionTypeBtn_txt);
             checkBox = itemView.findViewById(R.id.attractionTypeBtn_checkbox);
+            checkBox.setOnClickListener(this::onClick);
         }
 
         @Override
-        public void onClick(View v) {
-
+        public void onClick(View view) {
+            Toast.makeText(view.getContext(), attractionTypesList[getAdapterPosition()], Toast.LENGTH_SHORT).show();
         }
     }
 
