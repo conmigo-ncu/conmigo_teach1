@@ -1,7 +1,12 @@
 package com.example.myapplication;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -12,10 +17,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     //切換頁面物件
+    Fragment fragment = null;
     private Conmigo_exe home;
     private my_schedule schedule_page;
     private add_schedule add_sch;
     private personal_info user;
+    private Question_1 q1;
     //spinner物件
     private  Spinner spn;
     @Override
@@ -27,15 +34,24 @@ public class MainActivity extends AppCompatActivity {
         schedule_page = new my_schedule();
         add_sch = new add_schedule();
         user = new personal_info();
+        q1 = new Question_1();
+
+        BottomNavigationView nav = findViewById(R.id.nav_buttons);
+        nav.setOnNavigationItemSelectedListener(nav_change);
+
+        //FragmentManager fragmentManager = getFragmentManager();
+
 
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.frame, home, "Home")
                 .add(R.id.frame, schedule_page, "My Schedule")
                 .add(R.id.frame, add_sch, "Add Schedule")
                 .add(R.id.frame, user, "Personal Page")
+                .add(R.id.frame, q1, "Question 1")
                 .hide(schedule_page)
                 .hide(add_sch)
                 .hide(user)
+                .hide(q1)
                 .commit();
 
 
@@ -53,6 +69,36 @@ public class MainActivity extends AppCompatActivity {
 
         spn.setAdapter(selected);  */
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener nav_change = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            //Fragment fragment = null;
+            switch (menuItem.getItemId()){
+                case R.id.nav_home:
+                    fragment = new Conmigo_exe();
+                    break;
+                case R.id.nav_myTrip:
+                    fragment = new my_schedule();
+                    break;
+                case R.id.nav_user:
+                    fragment = new personal_info();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, fragment)
+                    .add(R.id.frame, q1, "Question 1")
+                    .add(R.id.frame, add_sch, "Add Schedule")
+                    .add(R.id.frame, user, "Personal Page")
+                    .add(R.id.frame, schedule_page, "My Schedule")
+                    .add(R.id.frame, user, "Personal Page")
+                    .hide(q1)
+                    .hide(schedule_page)
+                    .hide(add_sch)
+                    .hide(user)  
+                    .commit();
+
+            return true;
+        }
+    };
     public void showMySchedule(){
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
@@ -77,6 +123,12 @@ public class MainActivity extends AppCompatActivity {
                 .show(user)
                 .commit();
     }
+    public void showQuestion_1(){
+        getSupportFragmentManager().beginTransaction()
+                //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                .show(q1)
+                .commit();
+    }
     public void hideMySchedule(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
@@ -93,6 +145,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
                 .hide(user)
+                .commit();
+    }
+    public void hideQuestion_1(){
+        getSupportFragmentManager().beginTransaction()
+                //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
+                .hide(q1)
                 .commit();
     }
 }

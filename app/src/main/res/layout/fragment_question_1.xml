@@ -3,75 +3,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#f9f7e8"
-    android:weightSum="1"
     android:orientation="vertical"
-    tools:context=".Conmigo_exe">
+    android:background="@color/back_yellow"
+    android:weightSum="1"
+    tools:context=".Question_1">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="0.05"
-        android:layout_margin="10dp">
+        android:layout_weight="0.07"
+        android:background="@color/green_text"
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/upperPage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/former_page"
+                android:background="@color/green_text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="喜好問答"
+                android:textSize="30sp"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="95dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="CONMIGO"
+            android:text="Q: 較偏好的景點類型?
+                               (至多三項)"
             android:textSize="30sp"
-            android:textColor="#62bfad"/>
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="18dp"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/act_map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.7"
-        android:orientation="horizontal">
-
-        <ImageView
+        android:layout_weight="0.53">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/landscape"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/home_map"/>
+            android:layout_height="match_parent"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/main_button"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/my_schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="我的行程"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:layout_weight="1"
-            android:background="@drawable/button_shape2"
-            android:layout_margin="20dp"/>
-        <Button
-            android:id="@+id/now"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="當前行程"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:background="@drawable/button_shape"
-            android:layout_weight="1"
-            android:layout_margin="20dp"
-            android:layout_centerInParent="true"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/fix_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:background="@color/white"
-        android:orientation="horizontal">
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:background="@color/green_text"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
         <ImageButton
             android:id="@+id/schedule"
             android:layout_width="wrap_content"
@@ -110,5 +120,7 @@
             android:background="@color/white"
             android:layout_weight="1"/>
     </LinearLayout>
+
+
 
 </LinearLayout>

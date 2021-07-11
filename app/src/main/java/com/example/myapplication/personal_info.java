@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 /**
@@ -64,6 +65,8 @@ public class personal_info extends Fragment {
         mySchedule_bottom.setOnClickListener(btnToMySchedule_bottom);
         ImageButton home_bottom = v.findViewById(R.id.home_page);
         home_bottom.setOnClickListener(btnToHome_bottom);
+        Button quiz = v.findViewById(R.id.questions);
+        quiz.setOnClickListener(toQuiz);
 
         return v;
     }
@@ -82,6 +85,13 @@ public class personal_info extends Fragment {
             activity.hidePersonalPage();
             activity.hideMySchedule();
 
+        }
+    };
+    private View.OnClickListener toQuiz = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            MainActivity activity = (MainActivity) getActivity();
+            activity.showQuestion_1();
         }
     };
 }

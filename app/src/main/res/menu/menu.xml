@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_myTrip"
+        android:icon="@drawable/mytrip"
+        android:title="我的行程" />
+    <item
+        android:id="@+id/nav_recommend"
+        android:icon="@drawable/recommend"
+        android:title="推薦" />
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="首頁" />
+    <item
+        android:id="@+id/nav_mapSearch"
+        android:icon="@drawable/mapsearch"
+        android:title="地圖搜尋" />
+    <item
+        android:id="@+id/nav_user"
+        android:icon="@drawable/user"
+        android:title="我的資訊" />
+</menu>
