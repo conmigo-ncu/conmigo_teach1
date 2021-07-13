@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>conmigo_home.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000000; font-style: italic;}
+.s1 { color: #0000ff; font-weight: bold;}
+.s2 { color: #000000;}
+.s3 { color: #008000; font-weight: bold;}
+.s4 { color: #000080; font-weight: bold;}
+.s5 { color: #808080; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+conmigo_home.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s3">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s3">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+&lt;<span class="s4">LinearLayout </span><span class="s1">xmlns:android</span><span class="s3">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s3">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s3">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">android:background</span><span class="s3">=&quot;#f9f7e8&quot;</span>
+    <span class="s1">android:weightSum</span><span class="s3">=&quot;1&quot;</span>
+    <span class="s1">android:orientation</span><span class="s3">=&quot;vertical&quot;</span>
+    <span class="s1">tools:context</span><span class="s3">=&quot;.Conmigo_exe&quot;</span>&gt;
+
+    <span class="s5">&lt;!-- TODO: Update blank fragment layout --&gt;</span>
+    &lt;<span class="s4">LinearLayout</span>
+        <span class="s1">android:id</span><span class="s3">=&quot;@+id/title&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;0dp&quot;</span>
+        <span class="s1">android:orientation</span><span class="s3">=&quot;horizontal&quot;</span>
+        <span class="s1">android:layout_weight</span><span class="s3">=&quot;0.05&quot;</span>
+        <span class="s1">android:layout_margin</span><span class="s3">=&quot;10dp&quot;</span>&gt;
+
+        &lt;<span class="s4">TextView</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:text</span><span class="s3">=&quot;CONMIGO&quot;</span>
+            <span class="s1">android:textSize</span><span class="s3">=&quot;30sp&quot;</span>
+            <span class="s1">android:textColor</span><span class="s3">=&quot;#62bfad&quot;</span>/&gt;
+    &lt;/<span class="s4">LinearLayout</span>&gt;
+    &lt;<span class="s4">LinearLayout</span>
+        <span class="s1">android:id</span><span class="s3">=&quot;@+id/act_map&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;0dp&quot;</span>
+        <span class="s1">android:layout_weight</span><span class="s3">=&quot;0.7&quot;</span>
+        <span class="s1">android:orientation</span><span class="s3">=&quot;horizontal&quot;</span>&gt;
+
+        &lt;<span class="s4">ImageView</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/home_map&quot;</span>/&gt;
+    &lt;/<span class="s4">LinearLayout</span>&gt;
+    &lt;<span class="s4">LinearLayout</span>
+        <span class="s1">android:id</span><span class="s3">=&quot;@+id/main_button&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;0dp&quot;</span>
+        <span class="s1">android:layout_weight</span><span class="s3">=&quot;0.15&quot;</span>
+        <span class="s1">android:orientation</span><span class="s3">=&quot;horizontal&quot;</span>&gt;
+        &lt;<span class="s4">Button</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/my_schedule&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:text</span><span class="s3">=&quot;我的行程&quot;</span>
+            <span class="s1">android:textSize</span><span class="s3">=&quot;30sp&quot;</span>
+            <span class="s1">android:textColor</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;#84b6db&quot;</span>
+            <span class="s1">android:layout_margin</span><span class="s3">=&quot;20dp&quot;</span>/&gt;
+        &lt;<span class="s4">Button</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/now&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:text</span><span class="s3">=&quot;當前行程&quot;</span>
+            <span class="s1">android:textSize</span><span class="s3">=&quot;30sp&quot;</span>
+            <span class="s1">android:textColor</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;#62bfad&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>
+            <span class="s1">android:layout_margin</span><span class="s3">=&quot;20dp&quot;</span>/&gt;
+    &lt;/<span class="s4">LinearLayout</span>&gt;
+    &lt;<span class="s4">LinearLayout</span>
+        <span class="s1">android:id</span><span class="s3">=&quot;@+id/fix_button&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s3">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s3">=&quot;0dp&quot;</span>
+        <span class="s1">android:layout_weight</span><span class="s3">=&quot;0.1&quot;</span>
+        <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+        <span class="s1">android:orientation</span><span class="s3">=&quot;horizontal&quot;</span>&gt;
+        &lt;<span class="s4">ImageButton</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/schedule&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/calendar&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>/&gt;
+        &lt;<span class="s4">ImageButton</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/rcmd&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/like&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>/&gt;
+        &lt;<span class="s4">ImageButton</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/home_page&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/home&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>/&gt;
+
+        &lt;<span class="s4">ImageButton</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/exam&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/search_2&quot; </span>/&gt;
+
+        &lt;<span class="s4">ImageButton</span>
+            <span class="s1">android:id</span><span class="s3">=&quot;@+id/user_page&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s3">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s3">=&quot;match_parent&quot;</span>
+            <span class="s1">android:src</span><span class="s3">=&quot;@drawable/user&quot;</span>
+            <span class="s1">android:background</span><span class="s3">=&quot;@color/white&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s3">=&quot;1&quot;</span>/&gt;
+    &lt;/<span class="s4">LinearLayout</span>&gt;
+
+&lt;/<span class="s4">LinearLayout</span>&gt;</pre>
+</body>
+</html>
