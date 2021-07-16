@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".personal_info"
     android:orientation="vertical"
-    android:background="#f9f7e8"
-    android:weightSum="1">
+    android:background="#f9f7e8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -181,7 +180,7 @@
             android:textColor="@color/white"
             android:layout_marginVertical="5dp"/>
     </LinearLayout>
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -225,5 +224,5 @@
             android:src="@drawable/user"
             android:background="@color/white"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </LinearLayout>  -->
 </LinearLayout>

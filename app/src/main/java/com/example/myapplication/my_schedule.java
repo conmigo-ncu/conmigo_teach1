@@ -80,10 +80,10 @@ public class my_schedule extends Fragment {
         FloatingActionButton add_sch = v.findViewById(R.id.new_sch);
         add_sch.setOnClickListener(btnToAdd);
 
-        ImageButton home = v.findViewById(R.id.home_page);
+        /*ImageButton home = v.findViewById(R.id.home_page);
         home.setOnClickListener(back_to_home);
         ImageButton user = v.findViewById(R.id.user_page);
-        user.setOnClickListener(toUser);
+        user.setOnClickListener(toUser);  */
 
         return v;
     }
@@ -94,7 +94,7 @@ public class my_schedule extends Fragment {
             activity.showAddSchedule();
         }
     };
-    private  View.OnClickListener back_to_home = new View.OnClickListener() {
+   /* private  View.OnClickListener back_to_home = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             MainActivity activity = (MainActivity) getActivity();
@@ -107,5 +107,5 @@ public class my_schedule extends Fragment {
             MainActivity activity = (MainActivity) getActivity();
             activity.showPersonalPage();
         }
-    };
+    };  */
 }

@@ -12,8 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
-        android:weightSum="1"
         android:background="#f9f7e8">
         <LinearLayout
             android:id="@+id/title"
@@ -53,7 +51,7 @@
             android:background="#F9F7E8"
             android:orientation="vertical" >
         </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/basic_btn"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -97,7 +95,7 @@
                 android:src="@drawable/user"
                 android:background="@color/white"
                 android:layout_weight="1"/>
-        </LinearLayout>
+        </LinearLayout>  -->
 
 
 

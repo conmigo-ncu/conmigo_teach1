@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#f9f7e8"
-    android:weightSum="1"
     android:orientation="vertical"
     tools:context=".Conmigo_exe">
 
@@ -65,7 +64,7 @@
             android:layout_margin="20dp"
             android:layout_centerInParent="true"/>
     </LinearLayout>
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/fix_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -109,6 +108,6 @@
             android:src="@drawable/user"
             android:background="@color/white"
             android:layout_weight="1"/>
-    </LinearLayout>
+    </LinearLayout>  -->
 
 </LinearLayout>

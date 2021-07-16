@@ -82,11 +82,11 @@ public class Conmigo_exe extends Fragment {
         View v = inflater.inflate(R.layout.conmigo_home, container, false);
 
         Button mySchedule = v.findViewById(R.id.my_schedule);
-        ImageButton mySchedule_bottom = v.findViewById(R.id.schedule);
-        ImageButton user_bottom = v.findViewById(R.id.user_page);
+       // ImageButton mySchedule_bottom = v.findViewById(R.id.schedule);
+        //ImageButton user_bottom = v.findViewById(R.id.user_page);
         mySchedule.setOnClickListener(btnToMySchedule);
-        mySchedule_bottom.setOnClickListener(btnToMySchedule_bottom);
-        user_bottom.setOnClickListener(btnToUser_bottom);
+        //mySchedule_bottom.setOnClickListener(btnToMySchedule_bottom);
+        //user_bottom.setOnClickListener(btnToUser_bottom);
 
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_text, R.id.text, items);
 
@@ -127,11 +127,7 @@ public class Conmigo_exe extends Fragment {
             }
         });
 
-        //View list = getLayoutInflater().inflate(R.layout.list_view_ing, null);
-        //list_view = list.findViewById(R.id.sch_list);
-        //String[] items = {"無", "宜蘭二日遊", "桃園一日遊", "花東之旅"};
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.list_item_text, R.id.text, items);
-        //list_view.setAdapter(adapter);
+
         sch_ing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -220,11 +216,11 @@ public class Conmigo_exe extends Fragment {
             activity.showMySchedule();
         }
     };
-    private  View.OnClickListener btnToMySchedule_bottom = new View.OnClickListener() {
+  /*  private  View.OnClickListener btnToMySchedule_bottom = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             MainActivity activity = (MainActivity) getActivity();
-            activity.showMySchedule_bottom();
+            activity.showMySchedule();
         }
     };
     private  View.OnClickListener btnToUser_bottom = new View.OnClickListener() {
@@ -233,5 +229,5 @@ public class Conmigo_exe extends Fragment {
             MainActivity activity = (MainActivity) getActivity();
             activity.showPersonalPage();
         }
-    };
+    };  */
 }

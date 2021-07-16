@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView nav = findViewById(R.id.nav_buttons);
         nav.setOnNavigationItemSelectedListener(nav_change);
 
+        nav.getMenu().findItem(R.id.nav_home).setChecked(true);
+
         //FragmentManager fragmentManager = getFragmentManager();
 
 
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
 
 
+
+
         //spinner
         /*spn = findViewById(R.id.spinner1);
 
@@ -69,22 +73,31 @@ public class MainActivity extends AppCompatActivity {
 
         spn.setAdapter(selected);  */
     }
-    private BottomNavigationView.OnNavigationItemSelectedListener nav_change = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    public BottomNavigationView.OnNavigationItemSelectedListener nav_change = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            //Fragment fragment = null;
+            fragment = null;
             switch (menuItem.getItemId()){
                 case R.id.nav_home:
-                    fragment = new Conmigo_exe();
-                    break;
+                    showHome();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.frame, home).commit();
+                    return true;
+                    //break;
                 case R.id.nav_myTrip:
-                    fragment = new my_schedule();
-                    break;
+                    //fragment = new Conmigo_exe();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.frame, schedule_page).commit();
+                    showMySchedule();
+                    //showAddSchedule();
+                    return true;
+                    //break;
                 case R.id.nav_user:
-                    fragment = new personal_info();
-                    break;
+                    showPersonalPage();
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.frame, user).commit();
+                    return true;
+                    //break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, fragment)
+            /*getSupportFragmentManager().beginTransaction().replace(R.id.frame, fragment)
+
                     .add(R.id.frame, q1, "Question 1")
                     .add(R.id.frame, add_sch, "Add Schedule")
                     .add(R.id.frame, user, "Personal Page")
@@ -93,52 +106,82 @@ public class MainActivity extends AppCompatActivity {
                     .hide(q1)
                     .hide(schedule_page)
                     .hide(add_sch)
-                    .hide(user)  
-                    .commit();
+                    .hide(user)
+                    .commit();   */
 
-            return true;
+            return false;
         }
     };
-    public void showMySchedule(){
-        getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
-                .show(schedule_page)
+
+    public void showHome(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, home)
+                //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                //.show(home)
                 .commit();
+
     }
-    public void showMySchedule_bottom(){
+    public void showMySchedule(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, schedule_page)
+                //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                //.show(schedule_page)
+                .commit();
+        //showAddSchedule();
+
+    }
+    public void hideMySchedule(){
+        getSupportFragmentManager().beginTransaction()
+                .hide(schedule_page)
+                .commit();
+
+    }
+   /* public void showMySchedule_bottom(){
         getSupportFragmentManager().beginTransaction()
                 //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
                 .show(schedule_page)
                 .commit();
-    }
+    }  */
     public void showAddSchedule(){
-        getSupportFragmentManager().beginTransaction()
+        //if(fragment.isAdded()){
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame, add_sch)
+                    .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                    //.show(add_sch)
+                    .commit();
+        //}
+        /*else{
+            getSupportFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
+                    .show(add_sch)
+                    .commit();
+        }*/
+        /*getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
                 .show(add_sch)
-                .commit();
+                .commit();  */
     }
     public void showPersonalPage(){
-        getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, user)
                 //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
                 .show(user)
                 .commit();
     }
     public void showQuestion_1(){
-        getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, q1)
                 //.setCustomAnimations(R.anim.trans_in_from_right, R.anim.no_anim)
-                .show(q1)
+                //.show(q1)
                 .commit();
     }
-    public void hideMySchedule(){
-        getSupportFragmentManager().beginTransaction()
-                //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
-                .hide(schedule_page)
-                .commit();
-    }
+
     public void hideAddSchedule(){
         getSupportFragmentManager().beginTransaction()
                 .setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
-                .hide(add_sch)
+                .replace(R.id.frame, schedule_page)
+                //.hide(add_sch)
+                .commit();
+    }
+    public void hideHome(){
+        getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
+                .hide(home)
                 .commit();
     }
     public void hidePersonalPage(){
@@ -148,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
     public void hideQuestion_1(){
-        getSupportFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame,user)
                 //.setCustomAnimations(R.anim.no_anim, R.anim.trans_out_to_right)
                 .hide(q1)
                 .commit();

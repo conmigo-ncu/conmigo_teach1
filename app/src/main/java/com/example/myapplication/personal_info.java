@@ -61,21 +61,21 @@ public class personal_info extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_personal_info, container, false);
 
-        ImageButton mySchedule_bottom = v.findViewById(R.id.schedule);
-        mySchedule_bottom.setOnClickListener(btnToMySchedule_bottom);
-        ImageButton home_bottom = v.findViewById(R.id.home_page);
-        home_bottom.setOnClickListener(btnToHome_bottom);
+        //ImageButton mySchedule_bottom = v.findViewById(R.id.schedule);
+        //mySchedule_bottom.setOnClickListener(btnToMySchedule_bottom);
+        //ImageButton home_bottom = v.findViewById(R.id.home_page);
+        //home_bottom.setOnClickListener(btnToHome_bottom);
         Button quiz = v.findViewById(R.id.questions);
         quiz.setOnClickListener(toQuiz);
 
         return v;
     }
-    private  View.OnClickListener btnToMySchedule_bottom = new View.OnClickListener() {
+   /* private  View.OnClickListener btnToMySchedule_bottom = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             MainActivity activity = (MainActivity) getActivity();
             activity.hidePersonalPage();
-            activity.showMySchedule_bottom();
+            activity.showMySchedule();
         }
     };
     private  View.OnClickListener btnToHome_bottom = new View.OnClickListener() {
@@ -86,7 +86,7 @@ public class personal_info extends Fragment {
             activity.hideMySchedule();
 
         }
-    };
+    };  */
     private View.OnClickListener toQuiz = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
